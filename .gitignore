@@ -1,2 +1,5 @@
 f
-
+Client.class
+GUI.class
+ReadThread.class
+WriteThread.class

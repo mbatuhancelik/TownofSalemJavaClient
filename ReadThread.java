@@ -5,10 +5,12 @@ public class ReadThread extends Thread {
     private BufferedReader reader;
     private Socket socket;
     private Client client;
+    private GUI Interface;
     
-    public ReadThread(Socket socket,Client client){
+    public ReadThread(Socket socket,Client client,GUI Interface){
         this.socket = socket;
         this.client = client;
+        this.Interface = Interface;
         
         try{
             InputStream input = socket.getInputStream();
@@ -31,6 +33,7 @@ public class ReadThread extends Thread {
                 //System.out.print("\b\b\b\b\b");
                 String response = reader.readLine();
                 System.out.println( response);
+                this.Interface.push(response);
                 
             } catch (IOException ex) {
                 System.out.println("Error getting from server"+ ex.getMessage());
