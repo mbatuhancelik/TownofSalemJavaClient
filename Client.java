@@ -11,7 +11,7 @@ public class Client {
     public WriteThread WriteThread;
     public String color;
     public boolean isActive= true;
-    private GUI Interface = new GUI();
+    private GUI Interface;
     public Client(String hostIP, int port){
         this.hostIP = hostIP;
         this.port= port;
@@ -28,7 +28,8 @@ public class Client {
         try{
             Socket socket = new Socket(hostIP, port);
             System.out.println("Connected to "+hostIP+":"+port);
-            
+            Interface = new GUI();
+            Interface.setVisible(true);
             this.ReadThread  = new ReadThread(socket, this,Interface);
             this.ReadThread.start();
             this.WriteThread = new WriteThread(socket, this,Interface);

@@ -24,12 +24,14 @@ public class WriteThread  extends Thread{
         String userName = console.readLine("\nEnter your name ");
         client.setUserName(userName);
         writer.println(userName);
+        this.Interface.setTitle(GUI.windowTitle +" - userName") ;
         String text;
-        do {
+        /*do {
             text = console.readLine();//Bunu sildim userName+"> "
             
             //writer.println(text);
         } while (!text.equals("exit()"));
+        */
         try {
             socket.close();
         } catch (IOException ex) {

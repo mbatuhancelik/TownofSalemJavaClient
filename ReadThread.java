@@ -37,6 +37,9 @@ public class ReadThread extends Thread {
                     break;
                 System.out.println( response);
                 this.Interface.push(response);
+                //this.Interface.setTitle(GUI.windowTitle +" -"+ this.client.userName) ;
+
+                //this.Interface.textArea.setText("1234");
                 
             } catch (IOException ex) {
                 System.out.println("Error getting from server"+ ex.getMessage());
