@@ -1,23 +1,22 @@
 
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.*;
  
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+/**
+ * @author MUHAMMET SEN
+ */
 
 public class GUI extends JFrame implements KeyListener // ActionListener
 {
@@ -48,6 +47,7 @@ public class GUI extends JFrame implements KeyListener // ActionListener
 		for (int i = 0; i < 20; i++) {
 			push("");
 		}
+		push("Please enter your userName");
 		// create a new button
 		// b = new JButton("submit");
 		
