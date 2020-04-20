@@ -44,8 +44,9 @@ public class ReadThread extends Thread {
                 break;
             }
         }
-        System.out.println("Looptan ciktim");
+        System.out.println("Exiting");
         System.exit(0);
+
         //this.Interface.disable();
     }
 
