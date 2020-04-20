@@ -148,7 +148,7 @@ public class GUI extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					textArea.setText(textArea.getText()+textField.getText()+"\n");
+					//textArea.setText(textArea.getText()+textField.getText()+"\n");
 					textField.setText("");
 					textField.grabFocus();
 					//push(textArea.getText()+textField.getText()+"\n");
