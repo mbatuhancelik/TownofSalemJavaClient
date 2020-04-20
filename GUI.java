@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.awt.FlowLayout;
@@ -131,7 +132,15 @@ public void push(String s ){
 		if (k == 10) {
 			String incoming = t.getText();
 			
-			Client.client.WriteThread.SendToServer(incoming);
+			try {
+				Client.client.WriteThread.SendToServer(incoming);
+			} catch (InterruptedException e1) {
+				System.out.println("Error" + e1.getMessage());
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				System.out.println("Error" + e1.getMessage());
+				e1.printStackTrace();
+			}
 			
 			if(!hasName){
 			hasName = true;

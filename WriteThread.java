@@ -29,14 +29,26 @@ public class WriteThread  extends Thread{
             text = console.readLine();//Bunu sildim userName+"> "
             
             //writer.println(text);
-        } while (!text.equals("bye"));
+        } while (!text.equals("exit()"));
         try {
             socket.close();
         } catch (IOException ex) {
             System.out.println("Error writing to server " + ex.getMessage());
         }
     }
-    public  void SendToServer(String text){
+    public  void SendToServer(String text) throws InterruptedException, IOException {
+        if(text.equals("Bay Bay")){
+        this.writer.println(text);
+        client.isActive = false;
+        this.client.exiter();
+        this.writer.close();
+        this.client.ReadThread.reader.close();
+
+        /*
+        this.Interface.push("See ya!");
+        Thread.sleep(2000);  */
+        }
+   else
         this.writer.println(text);
     }
 

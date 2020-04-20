@@ -10,6 +10,7 @@ public class Client {
     public ReadThread ReadThread;
     public WriteThread WriteThread;
     public String color;
+    public boolean isActive= true;
     private GUI Interface = new GUI();
     public Client(String hostIP, int port){
         this.hostIP = hostIP;
@@ -17,6 +18,11 @@ public class Client {
         Random n = new Random();
         int index = n.nextInt(colors.length-1);
         this.color = colors[index];
+    }
+    public void exiter(){
+        System.exit(1);
+        while(true)
+            System.out.println("a");
     }
     public void execute() {
         try{

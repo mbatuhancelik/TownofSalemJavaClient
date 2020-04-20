@@ -2,12 +2,12 @@ import java.io.*;
 import java.net.*;
 //Read from Server 
 public class ReadThread extends Thread {
-    private BufferedReader reader;
+    public BufferedReader reader;
     private Socket socket;
     private Client client;
     private GUI Interface;
-    
     public ReadThread(Socket socket,Client client,GUI Interface){
+
         this.socket = socket;
         this.client = client;
         this.Interface = Interface;
@@ -22,8 +22,9 @@ public class ReadThread extends Thread {
             ex.printStackTrace();
         }
     }
+
     public void run() {
-        while(true){
+        while(client.isActive){
             try {
                 
                 /*if(client.getUserName() != null){
@@ -41,6 +42,7 @@ public class ReadThread extends Thread {
                 break;
             }
         }
+        System.out.println("Looptan ciktim");
     }
 
 }
