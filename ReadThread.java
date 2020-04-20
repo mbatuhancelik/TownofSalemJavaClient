@@ -24,7 +24,7 @@ public class ReadThread extends Thread {
     }
 
     public void run() {
-        while(client.isActive){
+        while(true){
             try {
                 
                 /*if(client.getUserName() != null){
@@ -33,6 +33,8 @@ public class ReadThread extends Thread {
 
                 //System.out.print("\b\b\b\b\b");
                 String response = reader.readLine();
+                if(response == null)
+                    break;
                 System.out.println( response);
                 this.Interface.push(response);
                 
@@ -43,6 +45,8 @@ public class ReadThread extends Thread {
             }
         }
         System.out.println("Looptan ciktim");
+        System.exit(0);
+        //this.Interface.disable();
     }
 
 }
