@@ -55,8 +55,8 @@ public class GUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI frame = new GUI();
-					frame.setVisible(true);
+					GUI Interface = new GUI();
+					Interface.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -84,9 +84,9 @@ public class GUI extends JFrame {
 		contentPane.add(textArea);
 		JScrollPane scrollableTextArea = new JScrollPane(textArea);
 		scrollableTextArea.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollableTextArea.setLocation(325, 40);
 		scrollableTextArea.setSize(305, 200);
-		scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		this.getContentPane().add(scrollableTextArea);
 		button.addMouseListener(new MouseAdapter() {
 			@Override
